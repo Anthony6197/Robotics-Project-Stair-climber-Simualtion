@@ -1,0 +1,1475 @@
+#VRML_SIM R2022a utf8
+WorldInfo {
+  basicTimeStep 16
+  contactProperties [
+    ContactProperties {
+      material2 "wheel1"
+      coulombFriction [
+        3
+      ]
+    }
+  ]
+}
+Viewpoint {
+  orientation 0.41122324045724185 0.21965179030719537 -0.8846742550355409 2.2587038134736743
+  position -0.33972852432345324 4.224689249545987 3.725176465267508
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+}
+Solid {
+  translation -0.28 -0.17 0.03
+  children [
+    DEF STAIR_SHAPE Shape {
+      appearance PBRAppearance {
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.6 0.2 0.1
+      }
+    }
+  ]
+  name "Stairs 1"
+  boundingObject USE STAIR_SHAPE
+}
+Solid {
+  translation -0.28 1.62 0.03
+  children [
+    DEF STAIR_SHAPE Shape {
+      appearance PBRAppearance {
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.6 0.2 0.06
+      }
+    }
+  ]
+  name "Stairs 1(7)"
+  boundingObject USE STAIR_SHAPE
+}
+Solid {
+  translation -0.28 0.03 0.06
+  children [
+    DEF STAIR_SHAPE Shape {
+      appearance PBRAppearance {
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.6 0.2 0.12
+      }
+    }
+  ]
+  name "Stairs 1(1)"
+  boundingObject USE STAIR_SHAPE
+}
+Solid {
+  translation -0.28 1.43 0.06
+  children [
+    DEF STAIR_SHAPE Shape {
+      appearance PBRAppearance {
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.6 0.2 0.12
+      }
+    }
+  ]
+  name "Stairs 1(6)"
+  boundingObject USE STAIR_SHAPE
+}
+Solid {
+  translation -0.28 0.23 0.09
+  children [
+    DEF STAIR_SHAPE Shape {
+      appearance PBRAppearance {
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.6 0.2 0.18
+      }
+    }
+  ]
+  name "Stairs 1(2)"
+  boundingObject USE STAIR_SHAPE
+}
+Solid {
+  translation -0.28 1.23 0.09
+  children [
+    DEF STAIR_SHAPE Shape {
+      appearance PBRAppearance {
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.6 0.2 0.18
+      }
+    }
+  ]
+  name "Stairs 1(5)"
+  boundingObject USE STAIR_SHAPE
+}
+Solid {
+  translation -0.28 1.03 0.12
+  children [
+    DEF STAIR_SHAPE Shape {
+      appearance PBRAppearance {
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.6 0.2 0.24
+      }
+    }
+  ]
+  name "Stairs 1(8)"
+  boundingObject USE STAIR_SHAPE
+}
+Solid {
+  translation -0.28 0.43 0.12
+  children [
+    DEF STAIR_SHAPE Shape {
+      appearance PBRAppearance {
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.6 0.2 0.24
+      }
+    }
+  ]
+  name "Stairs 1(4)"
+  boundingObject USE STAIR_SHAPE
+}
+Solid {
+  translation -0.28 0.63 0.15
+  children [
+    DEF STAIR_SHAPE Shape {
+      appearance PBRAppearance {
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.6 0.2 0.3
+      }
+    }
+  ]
+  name "Stairs 1(10)"
+  boundingObject USE STAIR_SHAPE
+}
+Solid {
+  translation -0.28 0.83 0.15
+  children [
+    DEF STAIR_SHAPE Shape {
+      appearance PBRAppearance {
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.6 0.2 0.3
+      }
+    }
+  ]
+  name "Stairs 1(3)"
+  boundingObject USE STAIR_SHAPE
+}
+DEF Testbot Robot {
+  translation -0.254764 -0.628932 0.189279
+  rotation -0.0002393449562608 0.00350829935887428 0.9999938172556871 1.52515
+  children [
+    SliderJoint {
+      jointParameters JointParameters {
+        maxStop 0.001
+      }
+      endPoint Solid {
+        translation 0.07 0.06 -0.06
+        children [
+          DEF WHEEL1T HingeJoint {
+            jointParameters HingeJointParameters {
+              position 7.114766186456551e-10
+              axis 0 1 0
+              anchor 0.005 0.03 -0.07
+            }
+            device [
+              DEF wheel_1 RotationalMotor {
+                name "wheel1T"
+              }
+            ]
+            endPoint DEF WHEEL1_SOLID Solid {
+              translation 0.0050000000498033395 0.029999999999999985 -0.07000000003201648
+              rotation 1 3.634169387728831e-10 -3.634120436164345e-10 1.5707999999999989
+              children [
+                DEF WHEEL_SHAPE Shape {
+                  appearance PBRAppearance {
+                    baseColor 0 1 0
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    height 0.02
+                    radius 0.06
+                    subdivision 24
+                  }
+                }
+              ]
+              contactMaterial "wheel1"
+              boundingObject USE WHEEL_SHAPE
+              physics DEF WHEEL_PH Physics {
+                mass 3
+              }
+            }
+          }
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 1
+              roughness 1
+              metalness 0
+            }
+            geometry Box {
+              size 0.05 0.05 0.2
+            }
+          }
+        ]
+        name "LEG1"
+        boundingObject Shape {
+          appearance PBRAppearance {
+          }
+          geometry Box {
+            size 0.05 0.05 0.2
+          }
+        }
+        physics Physics {
+        }
+      }
+    }
+    SliderJoint {
+      jointParameters JointParameters {
+        maxStop 0.001
+      }
+      endPoint Solid {
+        translation -0.07 0.06 -0.06
+        rotation 0 1 0 0
+        children [
+          DEF WHEEL2T HingeJoint {
+            jointParameters HingeJointParameters {
+              position 7.114766186456551e-10
+              axis 0 1 0
+              anchor -0.005 0.03 -0.07
+            }
+            device [
+              DEF wheel_1 RotationalMotor {
+                name "wheel2T"
+              }
+            ]
+            endPoint DEF WHEEL1_SOLID Solid {
+              translation -0.0049999999501966486 0.030000000000000006 -0.07000000003913123
+              rotation 1 3.634167032594466e-10 -3.634119651119558e-10 1.5707999999999995
+              children [
+                DEF WHEEL_SHAPE Shape {
+                  appearance PBRAppearance {
+                    baseColor 0 1 0
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    height 0.02
+                    radius 0.06
+                    subdivision 24
+                  }
+                }
+              ]
+              contactMaterial "wheel1"
+              boundingObject USE WHEEL_SHAPE
+              physics DEF WHEEL_PH Physics {
+                mass 1
+              }
+            }
+          }
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 1
+              roughness 1
+              metalness 0
+            }
+            geometry Box {
+              size 0.05 0.05 0.2
+            }
+          }
+        ]
+        name "LEG1(1)"
+        boundingObject Shape {
+          appearance PBRAppearance {
+          }
+          geometry Box {
+            size 0.05 0.05 0.2
+          }
+        }
+        physics Physics {
+        }
+      }
+    }
+    SliderJoint {
+      jointParameters JointParameters {
+        maxStop 0.001
+      }
+      endPoint Solid {
+        translation 0.0699966 -0.069998 -0.06000001924579915
+        rotation 0.4104937266677571 0.9094527163225566 0.06626203392547043 3.336809644250349e-07
+        children [
+          DEF WHEEL3T HingeJoint {
+            jointParameters HingeJointParameters {
+              position 7.114766186456551e-10
+              axis 0 1 0
+              anchor 0.005 -0.03 -0.07
+            }
+            device [
+              DEF wheel_1 RotationalMotor {
+                name "wheel3T"
+              }
+            ]
+            endPoint DEF WHEEL1_SOLID Solid {
+              translation 0.00500000004980336 -0.03 -0.07000000003201647
+              rotation 1 3.634167032594467e-10 -3.634120436164345e-10 1.570799999999999
+              children [
+                DEF WHEEL_SHAPE Shape {
+                  appearance PBRAppearance {
+                    baseColor 0 1 0
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    height 0.02
+                    radius 0.06
+                    subdivision 24
+                  }
+                }
+              ]
+              contactMaterial "wheel1"
+              boundingObject USE WHEEL_SHAPE
+              physics DEF WHEEL_PH Physics {
+                mass 3
+              }
+            }
+          }
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 1
+              roughness 1
+              metalness 0
+            }
+            geometry Box {
+              size 0.05 0.05 0.2
+            }
+          }
+        ]
+        name "LEG2"
+        boundingObject Shape {
+          appearance PBRAppearance {
+          }
+          geometry Box {
+            size 0.05 0.05 0.2
+          }
+        }
+        physics Physics {
+        }
+      }
+    }
+    SliderJoint {
+      jointParameters JointParameters {
+        maxStop 0.001
+      }
+      endPoint Solid {
+        translation -0.0700075 -0.070002 -0.06
+        rotation -0.15120146067134105 0.9713099517885908 -0.18356223970985563 9.817940411149525e-07
+        children [
+          DEF WHEEL4T HingeJoint {
+            jointParameters HingeJointParameters {
+              position 7.114766186456551e-10
+              axis 0 1 0
+              anchor -0.005 -0.03 -0.07
+            }
+            device [
+              DEF wheel_1 RotationalMotor {
+                name "wheel4T"
+              }
+            ]
+            endPoint DEF WHEEL1_SOLID Solid {
+              translation -0.004999999950196628 -0.02999999999999997 -0.07000000003913119
+              rotation 1 3.6341693877288277e-10 -3.6341204361643455e-10 1.5707999999999995
+              children [
+                DEF WHEEL_SHAPE Shape {
+                  appearance PBRAppearance {
+                    baseColor 0 1 0
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    height 0.02
+                    radius 0.06
+                    subdivision 24
+                  }
+                }
+              ]
+              contactMaterial "wheel1"
+              boundingObject USE WHEEL_SHAPE
+              physics DEF WHEEL_PH Physics {
+                mass 1
+              }
+            }
+          }
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 1
+              roughness 1
+              metalness 0
+            }
+            geometry Box {
+              size 0.05 0.05 0.2
+            }
+          }
+        ]
+        name "LEG3"
+        boundingObject Shape {
+          appearance PBRAppearance {
+          }
+          geometry Box {
+            size 0.05 0.05 0.2
+          }
+        }
+        physics Physics {
+        }
+      }
+    }
+    DEF ROBOT_BODY Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.2 0.1 0.05
+      }
+    }
+  ]
+  name "robot(1)"
+  boundingObject USE ROBOT_BODY
+  physics Physics {
+  }
+  controller "DBForward"
+}
+DEF Testbot Robot {
+  translation -2.12885 -0.489913 0.185663
+  rotation 0.00019400001720702161 0.003128090277449032 0.9999950886955441 1.83259
+  children [
+    DEF L1 SliderJoint {
+      jointParameters JointParameters {
+        minStop -0.16
+        maxStop 0.16
+      }
+      device [
+        DEF l1_ps PositionSensor {
+          name "l1_ps"
+        }
+        LinearMotor {
+          name "L1"
+          minPosition -0.16
+          maxPosition 0.16
+        }
+      ]
+      endPoint Solid {
+        translation 0.11999993195808811 0.11000005620299369 -0.059999978060572584
+        rotation 0.8692059840051649 -0.4944205493518551 0.0054108916291881574 2.4218921940967815e-06
+        children [
+          DEF DS_LEFT DistanceSensor {
+            translation 0.0278338 -0.00415659 -0.09
+            rotation 7.188389999361792e-09 -1.3325399998816928e-05 0.9999999999112168 -0.13090530717958604
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0 1 1
+                  roughness 1
+                  metalness 0
+                }
+                geometry Box {
+                  size 0.01 0.01 0.01
+                }
+              }
+            ]
+            name "ds_left1"
+          }
+          DEF DS_LEFT_B DistanceSensor {
+            translation -0.0230438 -0.000768044 -0.0999995
+            rotation -0.06526138882109965 0.9957318294368678 0.0652615888210654 1.57508
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0 1 1
+                  roughness 1
+                  metalness 0
+                }
+                geometry Box {
+                  size 0.01 0.01 0.01
+                }
+              }
+            ]
+            name "ds_left1f"
+          }
+          DEF WHEEL1T HingeJoint {
+            jointParameters HingeJointParameters {
+              position 7.114766186456551e-10
+              axis 0 1 0
+              anchor 0.005 0.02 -0.1
+            }
+            device [
+              RotationalMotor {
+                name "wheel1L"
+              }
+            ]
+            endPoint DEF WHEEL1_SOLID Solid {
+              translation 0.00500000000000001 0.0200001 -0.09999999999288524
+              rotation 9.236342415374842e-09 -0.7071052811843644 -0.7071082811855487 3.1415853071792785
+              children [
+                DEF WHEEL_SHAPE Shape {
+                  appearance PBRAppearance {
+                    baseColor 0 1 0
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    height 0.02
+                    radius 0.03
+                    subdivision 24
+                  }
+                }
+              ]
+              contactMaterial "wheel1"
+              boundingObject USE WHEEL_SHAPE
+              physics DEF WHEEL_PH Physics {
+              }
+            }
+          }
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 1
+              roughness 1
+              metalness 0
+            }
+            geometry Box {
+              size 0.05 0.02 0.2
+            }
+          }
+        ]
+        name "LEG1(2)"
+        boundingObject Shape {
+          appearance PBRAppearance {
+          }
+          geometry Box {
+            size 0.05 0.02 0.2
+          }
+        }
+        physics Physics {
+        }
+      }
+    }
+    DEF L2 SliderJoint {
+      jointParameters JointParameters {
+        minStop -0.16
+        maxStop 0.16
+      }
+      device [
+        PositionSensor {
+          name "l2_ps"
+        }
+        DEF L2 LinearMotor {
+          name "L2"
+          minPosition -0.16
+          maxPosition 0.16
+        }
+      ]
+      endPoint Solid {
+        translation 0.03000017687912926 0.11003395081676048 -0.059992987086818814
+        rotation 0.25221440562687414 0.9484872767115913 0.19172840037540534 3.204656482645245e-05
+        children [
+          DEF DS_LEFT_B DistanceSensor {
+            translation -0.0230438 -0.000768204 -0.0999995
+            rotation -0.06526138882109965 0.9957318294368678 0.0652615888210654 1.57508
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0 1 1
+                  roughness 1
+                  metalness 0
+                }
+                geometry Box {
+                  size 0.01 0.01 0.01
+                }
+              }
+            ]
+            name "ds_left2f"
+          }
+          DEF DS_LEFT DistanceSensor {
+            translation 0.0278 -0.00415659 -0.09
+            rotation -7.202189999360499e-09 1.3326099998816742e-05 -0.9999999999112075 -0.29999530717958667
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0 1 1
+                  roughness 1
+                  metalness 0
+                }
+                geometry Box {
+                  size 0.01 0.01 0.01
+                }
+              }
+            ]
+            name "ds_left2"
+          }
+          DEF WHEEL1T HingeJoint {
+            jointParameters HingeJointParameters {
+              position 7.114766186456551e-10
+              axis 0 1 0
+              anchor 0.005 0.02 -0.1
+            }
+            device [
+              DEF wheel_1 RotationalMotor {
+                name "wheel2L"
+              }
+            ]
+            endPoint DEF WHEEL1_SOLID Solid {
+              translation 0.005000000000000028 0.02 -0.09999999999288524
+              rotation 1 3.6341686026842134e-10 -3.634133781925735e-10 1.5707999999999513
+              children [
+                DEF WHEEL_SHAPE Shape {
+                  appearance PBRAppearance {
+                    baseColor 0 1 0
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    height 0.02
+                    radius 0.03
+                    subdivision 24
+                  }
+                }
+              ]
+              contactMaterial "wheel1"
+              boundingObject USE WHEEL_SHAPE
+              physics DEF WHEEL_PH Physics {
+              }
+            }
+          }
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 1
+              roughness 1
+              metalness 0
+            }
+            geometry Box {
+              size 0.05 0.02 0.2
+            }
+          }
+        ]
+        name "LEG1(3)"
+        boundingObject Shape {
+          appearance PBRAppearance {
+          }
+          geometry Box {
+            size 0.05 0.02 0.2
+          }
+        }
+        physics Physics {
+        }
+      }
+    }
+    DEF R2 SliderJoint {
+      jointParameters JointParameters {
+        minStop -0.16
+        maxStop 0.16
+      }
+      device [
+        PositionSensor {
+          name "r2_ps"
+        }
+        DEF R2 LinearMotor {
+          name "R2"
+          minPosition -0.16
+          maxPosition 0.16
+        }
+      ]
+      endPoint Solid {
+        translation 0.029999951278420478 -0.10997999857571239 -0.05999348750676982
+        rotation -9.651648196921483e-06 1.8039835793225047e-06 -0.9999999999517957 3.1415853146752566
+        children [
+          DEF DS_RIGHT_B DistanceSensor {
+            translation 0.0234179 -0.00207396 -0.0999996
+            rotation 0.06526521973158204 0.9957313010386534 -0.06526581973176344 1.57508
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0 1 1
+                  roughness 1
+                  metalness 0
+                }
+                geometry Box {
+                  size 0.01 0.01 0.01
+                }
+              }
+            ]
+            name "ds_right2f"
+          }
+          DEF DS_RIGHT DistanceSensor {
+            translation -0.0278 -0.00416 -0.09
+            rotation 1.17172e-08 -7.85178e-09 -1 -2.7488953071795863
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0 1 1
+                  roughness 1
+                  metalness 0
+                }
+                geometry Box {
+                  size 0.01 0.01 0.01
+                }
+              }
+            ]
+            name "ds_right2"
+          }
+          DEF WHEEL1T HingeJoint {
+            jointParameters HingeJointParameters {
+              position 7.114766186456551e-10
+              axis 0 1 0
+              anchor -0.005 0.02 -0.1
+            }
+            device [
+              DEF wheel_1 RotationalMotor {
+                name "wheel2R"
+              }
+            ]
+            endPoint DEF WHEEL1_SOLID Solid {
+              translation -0.004999999999999989 0.02 -0.10000000000711477
+              rotation 2.44708096733605e-07 0.7071062811861603 0.7071072811865391 3.1415899999999426
+              children [
+                DEF WHEEL_SHAPE Shape {
+                  appearance PBRAppearance {
+                    baseColor 0 1 0
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    height 0.02
+                    radius 0.03
+                    subdivision 24
+                  }
+                }
+              ]
+              contactMaterial "wheel1"
+              boundingObject USE WHEEL_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 1
+              roughness 1
+              metalness 0
+            }
+            geometry Box {
+              size 0.05 0.02 0.2
+            }
+          }
+        ]
+        name "LEG1(4)"
+        boundingObject Shape {
+          appearance PBRAppearance {
+          }
+          geometry Box {
+            size 0.05 0.02 0.2
+          }
+        }
+        physics Physics {
+        }
+      }
+    }
+    DEF L3 SliderJoint {
+      jointParameters JointParameters {
+        minStop -0.16
+        maxStop 0.16
+      }
+      device [
+        PositionSensor {
+          name "l3_ps"
+        }
+        LinearMotor {
+          name "L3"
+          minPosition -0.16
+          maxPosition 0.16
+        }
+      ]
+      endPoint Solid {
+        translation -0.059999784912602716 0.11001678978003948 -0.059999990763645136
+        rotation 0.283517674038616 0.9266167987578171 0.24697983068977117 1.850869405594731e-05
+        children [
+          DEF DS_LEFT_B DistanceSensor {
+            translation -0.0230438 -0.000768204 -0.0999995
+            rotation -0.06526138882109965 0.9957318294368678 0.0652615888210654 1.57508
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0 1 1
+                  roughness 1
+                  metalness 0
+                }
+                geometry Box {
+                  size 0.01 0.01 0.01
+                }
+              }
+            ]
+            name "ds_left3f"
+          }
+          DEF DS_LEFT DistanceSensor {
+            translation 0.0278335 -0.00415656 -0.09
+            rotation -7.188289999361705e-09 1.3326399998816663e-05 -0.9999999999112035 -0.29999530717958667
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0 1 1
+                  roughness 1
+                  metalness 0
+                }
+                geometry Box {
+                  size 0.01 0.01 0.01
+                }
+              }
+            ]
+            name "ds_left3"
+          }
+          DEF WHEEL1T HingeJoint {
+            jointParameters HingeJointParameters {
+              position 7.114766186456551e-10
+              axis 0 1 0
+              anchor 0.005 0.02 -0.1
+            }
+            device [
+              DEF wheel_1 RotationalMotor {
+                name "wheel3L"
+              }
+            ]
+            endPoint DEF WHEEL1_SOLID Solid {
+              translation 0.005 0.02 -0.1
+              rotation 1 3.6341909764606886e-10 -3.634128286612222e-10 1.570799999999943
+              children [
+                DEF WHEEL_SHAPE Shape {
+                  appearance PBRAppearance {
+                    baseColor 0 1 0
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    height 0.02
+                    radius 0.03
+                    subdivision 24
+                  }
+                }
+              ]
+              contactMaterial "wheel1"
+              boundingObject USE WHEEL_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 1
+              roughness 1
+              metalness 0
+            }
+            geometry Box {
+              size 0.05 0.02 0.2
+            }
+          }
+        ]
+        name "LEG1(5)"
+        boundingObject Shape {
+          appearance PBRAppearance {
+          }
+          geometry Box {
+            size 0.05 0.02 0.2
+          }
+        }
+        physics Physics {
+        }
+      }
+    }
+    DEF L4 SliderJoint {
+      jointParameters JointParameters {
+        minStop -0.16
+        maxStop 0.16
+      }
+      device [
+        PositionSensor {
+          name "l4_ps"
+        }
+        LinearMotor {
+          name "L4"
+          minPosition -0.16
+          maxPosition 0.16
+        }
+      ]
+      endPoint Solid {
+        translation -0.14999967162737649 0.10999974434673021 -0.059999095995043134
+        rotation 0.7936442133693057 0.6083820784972656 0.0003303766982837891 4.6056097840960556e-06
+        children [
+          DEF DS_LEFT_B DistanceSensor {
+            translation -0.0230438 -0.000768204 -0.0999995
+            rotation -0.06526138882109965 0.9957318294368678 0.0652615888210654 1.57508
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0 1 1
+                  roughness 1
+                  metalness 0
+                }
+                geometry Box {
+                  size 0.01 0.01 0.01
+                }
+              }
+            ]
+            name "ds_left4f"
+          }
+          DEF DS_LEFT DistanceSensor {
+            translation 0.0278338 -0.00415659 -0.09
+            rotation -7.1923499993613635e-09 1.3326199998816715e-05 -0.9999999999112061 -0.29999530717958667
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0 1 1
+                  roughness 1
+                  metalness 0
+                }
+                geometry Box {
+                  size 0.01 0.01 0.01
+                }
+              }
+            ]
+            name "ds_left4"
+          }
+          DEF WHEEL2T HingeJoint {
+            jointParameters HingeJointParameters {
+              position 7.114766186456551e-10
+              axis 0 1 0
+              anchor 0.005 0.02 -0.1
+            }
+            device [
+              DEF wheel_1 RotationalMotor {
+                name "wheel4L"
+              }
+            ]
+            endPoint DEF WHEEL1_SOLID Solid {
+              translation 0.004999990000000019 0.02 -0.09996969999288523
+              rotation 1 3.9012353999999183e-10 -3.324026995138912e-10 1.5708003007680196
+              children [
+                DEF WHEEL_SHAPE Shape {
+                  appearance PBRAppearance {
+                    baseColor 0 1 0
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    height 0.02
+                    radius 0.03
+                    subdivision 24
+                  }
+                }
+              ]
+              contactMaterial "wheel1"
+              boundingObject USE WHEEL_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 1
+              roughness 1
+              metalness 0
+            }
+            geometry Box {
+              size 0.05 0.02 0.2
+            }
+          }
+        ]
+        name "LEG1(1)"
+        boundingObject Shape {
+          appearance PBRAppearance {
+          }
+          geometry Box {
+            size 0.05 0.02 0.2
+          }
+        }
+        physics Physics {
+        }
+      }
+    }
+    DEF R1 SliderJoint {
+      jointParameters JointParameters {
+        minStop -0.16
+        maxStop 0.16
+      }
+      device [
+        DEF r1_ps PositionSensor {
+          name "r1_ps"
+        }
+        LinearMotor {
+          name "R1"
+          minPosition -0.16
+          maxPosition 0.16
+        }
+      ]
+      endPoint Solid {
+        translation 0.11999916763995377 -0.10999727832113138 -0.060000006665327954
+        rotation -0.9339063202600609 -0.35751779894534597 9.1736512637749e-05 2.760661200157407e-06
+        children [
+          DEF DS_RIGHT_B DistanceSensor {
+            translation -0.0261542 0.00445255 -0.0999991
+            rotation 0.06526521973158204 0.9957313010386534 -0.06526581973176344 1.57508
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0 1 1
+                  roughness 1
+                  metalness 0
+                }
+                geometry Box {
+                  size 0.01 0.01 0.01
+                }
+              }
+            ]
+            name "ds_right1f"
+          }
+          DEF DS_RIGHT DistanceSensor {
+            translation 0.0278044 0.00415792 -0.09
+            rotation -0.9779097044796436 0.14779395533726464 0.14781595533061634 0.130899
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0 1 1
+                  roughness 1
+                  metalness 0
+                }
+                geometry Box {
+                  size 0.01 0.01 0.01
+                }
+              }
+            ]
+            name "ds_right1"
+          }
+          DEF WHEEL3T HingeJoint {
+            jointParameters HingeJointParameters {
+              position 7.114766186456551e-10
+              axis 0 1 0
+              anchor 0.005 -0.02 -0.1
+            }
+            device [
+              DEF wheel_1 RotationalMotor {
+                name "wheel1R"
+              }
+            ]
+            endPoint DEF WHEEL1_SOLID Solid {
+              translation 0.005000000000000018 -0.02 -0.09999989999288524
+              rotation 1 3.634027687145077e-10 -3.634122398776319e-10 1.570799999999889
+              children [
+                DEF WHEEL_SHAPE Shape {
+                  appearance PBRAppearance {
+                    baseColor 0 1 0
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    height 0.02
+                    radius 0.03
+                    subdivision 24
+                  }
+                }
+              ]
+              contactMaterial "wheel1"
+              boundingObject USE WHEEL_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          DEF Leg Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 1
+              roughness 1
+              metalness 0
+            }
+            geometry Box {
+              size 0.05 0.02 0.2
+            }
+          }
+        ]
+        name "R1"
+        boundingObject USE Leg
+        physics Physics {
+        }
+      }
+    }
+    DEF R3 SliderJoint {
+      jointParameters JointParameters {
+        minStop -0.16
+        maxStop 0.16
+      }
+      device [
+        PositionSensor {
+          name "r3_ps"
+        }
+        LinearMotor {
+          name "R3"
+          minPosition -0.16
+          maxPosition 0.16
+        }
+      ]
+      endPoint Solid {
+        translation -0.059999935358181045 -0.10999811818201044 -0.05999948406636135
+        rotation -0.8431524399603519 0.5376513665732141 0.004997100245192965 5.429865996185636e-06
+        children [
+          DEF DS_RIGHT_B DistanceSensor {
+            translation -0.0261542 0.00445255 -0.0999991
+            rotation 0.06526521973158204 0.9957313010386534 -0.06526581973176344 1.57508
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0 1 1
+                  roughness 1
+                  metalness 0
+                }
+                geometry Box {
+                  size 0.01 0.01 0.01
+                }
+              }
+            ]
+            name "ds_right3f"
+          }
+          DEF DS_RIGHT DistanceSensor {
+            translation 0.0278 -0.00416 -0.09
+            rotation 0.06290557163411147 0.21801690169005744 -0.9739155608341276 0.298851
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0 1 1
+                  roughness 1
+                  metalness 0
+                }
+                geometry Box {
+                  size 0.01 0.01 0.01
+                }
+              }
+            ]
+            name "ds_right3"
+          }
+          DEF WHEEL3T HingeJoint {
+            jointParameters HingeJointParameters {
+              position 7.114766186456551e-10
+              axis 0 1 0
+              anchor 0.005 -0.02 -0.1
+            }
+            device [
+              DEF wheel_1 RotationalMotor {
+                name "wheel3R"
+              }
+            ]
+            endPoint DEF WHEEL1_SOLID Solid {
+              translation 0.005 -0.02 -0.1
+              rotation 0.9999999999999868 1.1490955313960078e-07 -1.1540270766304401e-07 1.5707997677687369
+              children [
+                DEF WHEEL_SHAPE Shape {
+                  appearance PBRAppearance {
+                    baseColor 0 1 0
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    height 0.02
+                    radius 0.03
+                    subdivision 24
+                  }
+                }
+              ]
+              contactMaterial "wheel1"
+              boundingObject USE WHEEL_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 1
+              roughness 1
+              metalness 0
+            }
+            geometry Box {
+              size 0.05 0.02 0.2
+            }
+          }
+        ]
+        name "LEG2(1)"
+        boundingObject Shape {
+          appearance PBRAppearance {
+          }
+          geometry Box {
+            size 0.05 0.02 0.2
+          }
+        }
+        physics Physics {
+        }
+      }
+    }
+    DEF R4 SliderJoint {
+      jointParameters JointParameters {
+        minStop -0.16
+        maxStop 0.16
+      }
+      device [
+        PositionSensor {
+          name "r4_ps"
+        }
+        LinearMotor {
+          name "R4"
+          minPosition -0.16
+          maxPosition 0.16
+        }
+      ]
+      endPoint Solid {
+        translation -0.1499998344655401 -0.11001315172828718 -0.05999938295300834
+        rotation -0.9331591299548038 0.17139151888932558 0.31597307707272054 5.131255028163475e-06
+        children [
+          DEF DS_RIGHT_B DistanceSensor {
+            translation -0.0261542 0.00445255 -0.0999991
+            rotation 0.06526521973158204 0.9957313010386534 -0.06526581973176344 1.57508
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0 1 1
+                  roughness 1
+                  metalness 0
+                }
+                geometry Box {
+                  size 0.01 0.01 0.01
+                }
+              }
+            ]
+            name "ds_right4f"
+          }
+          DEF DS_RIGHT DistanceSensor {
+            translation 0.0278044 0.00415792 -0.09
+            rotation -0.9779130154300005 0.14779500233198345 0.1477930023319519 -1.5931253071795863
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0 1 1
+                  roughness 1
+                  metalness 0
+                }
+                geometry Box {
+                  size 0.01 0.01 0.01
+                }
+              }
+            ]
+            name "ds_right4"
+          }
+          DEF WHEEL3T HingeJoint {
+            jointParameters HingeJointParameters {
+              position 7.114766186456551e-10
+              axis 0 1 0
+              anchor 0.005 -0.02 -0.1
+            }
+            device [
+              DEF wheel_1 RotationalMotor {
+                name "wheel4R"
+              }
+            ]
+            endPoint DEF WHEEL1_SOLID Solid {
+              translation 0.004999940000000025 -0.02 -0.09997669999288523
+              rotation 0.9999999999999868 1.1490955710407763e-07 -1.1540270797706218e-07 1.570799767768733
+              children [
+                DEF WHEEL_SHAPE Shape {
+                  appearance PBRAppearance {
+                    baseColor 0 1 0
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    height 0.02
+                    radius 0.03
+                    subdivision 24
+                  }
+                }
+              ]
+              contactMaterial "wheel1"
+              boundingObject USE WHEEL_SHAPE
+              physics Physics {
+              }
+            }
+          }
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 1
+              roughness 1
+              metalness 0
+            }
+            geometry Box {
+              size 0.05 0.02 0.2
+            }
+          }
+        ]
+        name "LEG2(2)"
+        boundingObject Shape {
+          appearance PBRAppearance {
+          }
+          geometry Box {
+            size 0.05 0.02 0.2
+          }
+        }
+        physics Physics {
+        }
+      }
+    }
+    DEF ROBOT_BODY Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.3 0.2 0.1
+      }
+    }
+  ]
+  name "zcarrier(1)"
+  boundingObject USE ROBOT_BODY
+  physics Physics {
+    mass 1.1
+  }
+  controller "DBForwardT"
+}
+DEF STEP Solid {
+  translation -2.1 0.48 0.05
+  children [
+    DEF STEP Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 0
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.7 1 0.1
+      }
+    }
+  ]
+  boundingObject USE STEP
+  physics Physics {
+  }
+}
+DEF STEP Solid {
+  translation -2.1 1.02 0.15
+  children [
+    DEF STEP Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 0
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.7 1 0.1
+      }
+    }
+  ]
+  name "solid(1)"
+  boundingObject USE STEP
+  physics Physics {
+  }
+}
+DEF STEP Solid {
+  translation -2.1 2.02 0.15
+  children [
+    DEF STEP Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 0
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.7 1 0.1
+      }
+    }
+  ]
+  name "solid(4)"
+  boundingObject USE STEP
+  physics Physics {
+  }
+}
+DEF STEP Solid {
+  translation -2.1 1.39 0.25
+  children [
+    DEF STEP Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 0
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.7 1 0.1
+      }
+    }
+  ]
+  name "solid(5)"
+  boundingObject USE STEP
+  physics Physics {
+  }
+}
+DEF STEP Solid {
+  translation -2.1 1.48 0.05
+  children [
+    DEF STEP Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 0
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.7 1 0.1
+      }
+    }
+  ]
+  name "solid(2)"
+  boundingObject USE STEP
+  physics Physics {
+  }
+}
+DEF STEP Solid {
+  translation -2.1 2.57 0.05
+  children [
+    DEF STEP Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 0
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.7 1 0.1
+      }
+    }
+  ]
+  name "solid(3)"
+  boundingObject USE STEP
+  physics Physics {
+  }
+}
